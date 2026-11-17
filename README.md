@@ -74,6 +74,14 @@ const fresh = await Pkce.refresh(clientId, tokens.refresh_token, clientSecret);
 The access token is the person's. Send it as a bearer token to call what the person may do in your app, such as
 [calls and messages](https://docs.mediloop.co/docs/api/calls).
 
+## Sandbox
+
+To test with made-up data, use a sandbox key (`sk_test_...`) and the sandbox address:
+
+```ts
+const mediloop = new Client({ apiKey: process.env.MEDILOOP_SANDBOX_KEY!, baseUrl: 'https://sandbox.api.mediloop.co' });
+```
+
 ## Tests
 
     npm test                  # no network
