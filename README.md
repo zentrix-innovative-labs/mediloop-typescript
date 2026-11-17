@@ -9,12 +9,12 @@ processes after updating. A webhook endpoint is a public door into your server, 
 
 ## Install
 
-    npm install @mediloop/sdk
+    npm install @zentrixlabs/mediloop
 
 ## Use
 
 ```ts
-import { Client } from '@mediloop/sdk';
+import { Client } from '@zentrixlabs/mediloop';
 
 const mediloop = new Client({ apiKey: process.env.MEDILOOP_API_KEY! });
 
@@ -49,7 +49,7 @@ What the client does for you:
 Pass the body exactly as received, before you parse it. With Express, use `express.raw({ type: 'application/json' })` on that route.
 
 ```ts
-import { Webhook } from '@mediloop/sdk';
+import { Webhook } from '@zentrixlabs/mediloop';
 
 const event = Webhook.event(req.body, req.header('x-mediloop-signature')!, signingSecret);
 ```
@@ -61,7 +61,7 @@ It checks the signature in constant time and refuses a delivery older than five 
 For an app people sign in to. Do the code exchange on your server: it sends your client secret.
 
 ```ts
-import { Pkce } from '@mediloop/sdk';
+import { Pkce } from '@zentrixlabs/mediloop';
 
 const p = Pkce.start();                       // keep p.verifier and p.state in the person's session
 const url = Pkce.authorizeUrl(clientId, redirectUri, p.challenge, p.state);

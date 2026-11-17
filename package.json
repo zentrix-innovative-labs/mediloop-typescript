@@ -1,5 +1,5 @@
 {
-  "name": "@mediloop/sdk",
+  "name": "@zentrixlabs/mediloop",
   "version": "1.0.0",
   "description": "A small TypeScript client for the Mediloop API: tokens, safe retries, paging, webhook checks and Sign in with Mediloop.",
   "license": "MIT",
